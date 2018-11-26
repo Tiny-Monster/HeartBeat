@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+repositories {
+    jcenter()
+    // DroiCore SDK来源地址  仓库地址
+    maven {
+        url "https://github.com/DroiBaaS/DroiBaaS-SDK-Android/raw/master/"
+    }
+}
+android {
+    compileSdkVersion 26
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.tinymonster.heartbeat3"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "5ba9f57c73d8ca8871b56f57", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    greendao {
+        //版本号，升级时可配置
+        schemaVersion 11
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDirs = ['src/jniLibs'];
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    compile 'com.orhanobut:logger:2.1.1'
+    compile 'com.github.CKTim:Camera2Record:v1.0.0'
+    compile project(path: ':london-eye-layout-manager')
+    implementation files('libs/com.baidu.tts_2.3.2.20180419_5a5fec8.jar')
+    compile 'org.apache.commons:commons-lang3:3.6'
+    compile 'cn.jiguang.sdk:jpush:3.1.1'  // 此处以JPush 3.1.1 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.9'  // 此处以JCore 1.1.9 版本为例。
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'com.droi.sdk:Core:+'
+
+    // DroiCore SDK使用的3rd http函数库
+    // Core SDK从1.1.3893开始要求OkHttp3版本为3.8.0(含)以上
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'org.lz4:lz4-java:1.4.0'
+    compile 'com.android.support:support-v4:26.0.0-beta1'
+//    annotationProcessor 'com.droi.sdk:annotationprocessor:+'
+//    // 推荐使用新版DroiCore SDK
+//    compile 'com.droi.sdk:Core:+'
+//
+//    // DroiCore SDK使用的3rd http函数库
+//    // Core SDK从1.1.3893开始要求OkHttp3版本为3.8.0(含)以上
+//    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+//    //support-v4 做6.0权限判断
+//    compile 'com.android.support:support-v4:26.0.0-beta1'
+//
+//    //Core-1.1.4120开始增加lz4-java依赖
+//    compile 'org.lz4:lz4-java:1.4.0'
+}

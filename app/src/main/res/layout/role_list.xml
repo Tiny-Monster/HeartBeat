@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/cellBackground"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cell_01" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/button_background"
+        android:padding="10dip" >
+
+        <ImageView
+            android:id="@+id/roleHeaderImg"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/role_1" />
+
+        <TextView
+            android:id="@+id/mname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="15dip"
+            android:layout_weight="1"
+            android:text="佳佳佳佳佳佳偏偏" />
+
+        <TextView
+            android:id="@+id/mRoleID"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="58888888" />
+    </LinearLayout>
+    
+</FrameLayout>

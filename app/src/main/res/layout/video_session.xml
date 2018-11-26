@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/video_session"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <SurfaceView
+        android:id="@+id/surface_remote"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/videoremote_bg"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/frame_local_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        android:background="@drawable/video_bg"
+        android:orientation="vertical"
+        android:padding="3dip" >
+
+        <SurfaceView
+            android:id="@+id/surface_local"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</FrameLayout>

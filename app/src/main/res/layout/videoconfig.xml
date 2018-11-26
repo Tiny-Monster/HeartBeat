@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/save_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <CheckBox
+                android:id="@+id/enableP2PBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启用P2P网络连接" />
+
+            <CheckBox
+                android:id="@+id/videoOverlayBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overlay视频模式" />
+
+            <CheckBox
+                android:id="@+id/videoRotateBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="翻转视频" />
+
+            <CheckBox
+                android:id="@+id/fixColorDeviation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本地视频采集偏色修正" />
+
+            <CheckBox
+                android:id="@+id/videoShowGPURender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启用视频GPU渲染" />
+
+            <CheckBox
+                android:id="@+id/videoAutoRotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本地视频跟随设备自动旋转" />
+
+            <CheckBox
+                android:id="@+id/useARMv6Box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="强制使用ARMv6指令集（安全模式）" />
+
+            <CheckBox
+                android:id="@+id/useAECBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启用回音消除（AEC）" />
+
+            <CheckBox
+                android:id="@+id/useHWCodecBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启用平台内置硬件编解码（需重启应用程序）" />
+
+            <TextView
+                android:id="@+id/configModelLable"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="选择配置模式：" />
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    android:id="@+id/serverModelConfigBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="服务器配置参数" />
+
+                <RadioButton
+                    android:id="@+id/customModelConfigBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自定义配置参数" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/resolutionTV"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="选择视频分辨率：" />
+
+            <Spinner
+                android:id="@+id/videoSizeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/videoBitrateTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="选择视频码率：" />
+
+            <Spinner
+                android:id="@+id/videoBitrateSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/videoFPSSpinnerTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="选择视频帧率：" />
+
+            <Spinner
+                android:id="@+id/videoFPSSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/videoQualitySpinnerTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="选择视频质量：" />
+
+            <Spinner
+                android:id="@+id/videoQualitySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/videoPresetSpinnerTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="选择视频预设参数：" />
+
+            <Spinner
+                android:id="@+id/videoPresetSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/save_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dip"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" 
+            android:layout_gravity="center"
+            android:text="保存设置"/>
+    </LinearLayout>
+
+</RelativeLayout>
